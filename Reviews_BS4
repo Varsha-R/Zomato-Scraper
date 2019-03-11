@@ -8,7 +8,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleW
 page_no = 1
 restaurant_reviews =[]
 
-for page in range(300, 500):
+for page in range(0, 813):
     print(page_no)
     response = requests.get("https://www.zomato.com/bangalore/restaurants?page={0}".format(page_no), headers=headers)
     content = response.content
