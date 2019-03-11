@@ -32,7 +32,7 @@ Beautiful Soup has been used to scrape data from [Zomato](https://www.zomato.com
 
 **Reviews_BS4**:
 
-Beautiful Soup has been used to scrape the popular top 10 reviews of each restaurant in Bangalore. the data obtained is stored in a *csv* file.
+Beautiful Soup has been used to scrape the popular top 10 reviews of each restaurant in Bangalore. The data obtained is stored in a *csv* file.
 * Restaurant Name
 * Customer Name
 * Customer Rating
