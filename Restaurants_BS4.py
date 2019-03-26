@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas
 import csv
+import re
 
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
 page_no = 1
@@ -27,12 +28,16 @@ for page in range(0,813):
         cost_for_two = rest6[0].find("span", {'class': 'col-s-11 col-m-12 pl0'})
         if cost_for_two is None:
             continue
+        votes = list_content[i].find("span", {'class': re.compile(r'rating-votes-div*')})
+        if votes is None:
+            continue
         dataframe ={}
         dataframe["rest_name"] = res_name.string.replace('\n', ' ')
         dataframe["locality"] = locality.string.replace('\n', ' ')
         dataframe["rating"] = ratings.string.replace('\n', ' ')
         dataframe["cuisines"] = cuisines
         dataframe["cost_for_two"] = cost_for_two.string[1:]
+        dataframe["votes"] = votes.string.split()[0]
         list_restaurants.append(dataframe)
     page_no+=1
     
