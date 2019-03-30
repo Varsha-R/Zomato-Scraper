@@ -26,6 +26,7 @@ Beautiful Soup has been used to scrape data from [Zomato](https://www.zomato.com
 * Cuisine
 * Rating
 * Cost for two
+* Votes
 
 
 
